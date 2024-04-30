@@ -6,9 +6,14 @@ import Contact from "./pages/Contact";
 import Layout from "./layout/Layout";
 import CreateContact from "./pages/CreateContact";
 import EditContact from "./pages/EditContact";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -19,6 +24,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
