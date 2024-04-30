@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../lib/features/contact/contactSlice';
+import { addContact, updateContact } from '../lib/features/contact/contactSlice';
 
 interface Contact {
   id: string;
@@ -10,7 +10,7 @@ interface Contact {
   isActive: boolean;
 }
 
-function CreateContact() {
+function CreateContact({ initialData, isUpdateMode } : { initialData?: Contact, isUpdateMode?: boolean}) {
     const initialState: Contact = {
         id: '',
         email: '',
@@ -18,7 +18,8 @@ function CreateContact() {
         lastName: '',
         isActive: true,
     };
-  const [formData, setFormData] = useState<Contact>(initialState);
+    const data = initialData || initialState;
+  const [formData, setFormData] = useState<Contact>(data);
 
   const [errors, setErrors] = useState<Partial<Contact>>({}); // Track validation errors
 
@@ -65,6 +66,10 @@ function CreateContact() {
     // console.log(formData)
       setFormData({ ...initialState }); // Reset form on successful submission
     }
+  };
+
+  const handleUpdate = () => {
+    dispatch(updateContact(formData));
   };
 
   return (
@@ -140,12 +145,22 @@ function CreateContact() {
     <label htmlFor="inactive">Inactive</label>
   </div>
 </div>
-
+    {
+      !isUpdateMode ? (
         <button
           type="submit"
           className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600" >
             Add Contact
         </button>
+      ) : (
+        <button
+          type="button"
+          onClick={handleUpdate}
+          className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600" >
+            Update
+        </button>
+      )
+    }
         </form>
         </div>
     );

@@ -9,7 +9,7 @@ function Layout() {
         <Header />
         <div className="flex h-screen">
         <Sidebar />
-        <div className=''>
+        <div className='flex-grow'>
         <Outlet/>
         </div>
         </div>

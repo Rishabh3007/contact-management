@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Layout from "./layout/Layout";
 import CreateContact from "./pages/CreateContact";
+import EditContact from "./pages/EditContact";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Contact />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<CreateContact />} />
+          <Route path="/edit/:id" element={<EditContact />} />
         </Route>
       </Routes>
     </BrowserRouter>
