@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import uiReducer from "./features/ui/uiSlice";
+import contactReducer from "./features/contact/contactSlice";
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
-            ui: uiReducer
+            ui: uiReducer,
+            contact: contactReducer
         }
     })
 }
