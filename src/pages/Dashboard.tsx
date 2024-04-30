@@ -16,7 +16,7 @@ function Dashboard() {
 
   return(
     <div>
-    this is the dashboard page
+    this is the  Rishabh's dashboard page
   </div>
   ) 
 }
