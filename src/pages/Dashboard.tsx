@@ -104,6 +104,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Line } from 'react-chartjs-2';
 import LineGraph from "./LineGraph";
+import MapComponent from "./MapComponent";
 
 interface IChartData {
   labels: string[];
@@ -181,8 +182,9 @@ function Dashboard() {
     //   </div>
     // </div>
     <>
-    <LineGraph />
     <h1>dashboard</h1>
+    <LineGraph />
+    <MapComponent/>
     </>
   )
 }
