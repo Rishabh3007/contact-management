@@ -9,7 +9,7 @@ function Layout() {
         <Header />
         <div className="flex h-screen">
         <Sidebar />
-        <div className='flex-grow'>
+        <div className='flex-grow overflow-y-auto'>
         <Outlet/>
         </div>
         </div>

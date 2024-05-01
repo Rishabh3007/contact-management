@@ -12,14 +12,14 @@ function Contact() {
   return (
     <>
       <div className="flex flex-col items-center">
+        <Link to="/create" className="text-white">
         <button
           type="button"
-          className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 w-3/12 mt-2"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md shadow-sm mt-4"
         >
-          <Link to="/create" className="text-white">
             Add Contact
-          </Link>
         </button>
+          </Link>
         {contacts.length > 0 ? (
           <div className="mt-4 grid justify-center grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 ">
             {/* Responsive grid for cards */}
@@ -54,7 +54,7 @@ function Contact() {
             ))}
           </div>
         ) : (
-          <div className="">
+          <div className="border-solid border-2 rounded-md mt-4 p-2">
             <p>No contact found</p>
             <p>Please Add contact from Create Contact Button</p>
           </div>

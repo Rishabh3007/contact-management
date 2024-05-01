@@ -92,14 +92,14 @@ export default function MapComponent() {
 
   return (
     <MapContainer
-      style={{ height: "80vh", width: "100vw" }}
+      style={{ height:"50%", width: "80%", margin: "20px auto", position: "relative", zIndex: "-20" }}
       center={center}
       zoom={2}
-    >
+      >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        />
       {markers}
     </MapContainer>
   );
